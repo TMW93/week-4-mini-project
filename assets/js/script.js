@@ -80,6 +80,8 @@ addTextBtn.addEventListener('click', function () {
 
 function attachMouseListeners() {
   // TODO: Attach the mouse move event listener to the document and the click listener to the mood board div so that the element can be dragged anywhere on the screen, but dropped only on the mood board div.
+  document.addEventListener(`mousemove`, mouseMoveHandler);
+  moodBoardEl.addEventListener(`click`, placeElementClickHandler);
 }
 
 // ? This is the event handler for the mouse move event. This will be called whenever the mouse is moved on the screen.
