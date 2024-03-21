@@ -17,16 +17,22 @@ let currentElement = null;
 
 clearBtn.addEventListener('click', function () {
   // TODO: Clear the local storage and refresh the page
+  localStorage.clear(`local-data`);
+  loadFromLocalStorage();
+
 });
 
 function updateLocalStorage() {
   // TODO: Update the local storage with the tempStorageObject
+  let localData = JSON.stringify(tempStorageObject);
+  localStorage.setItem('local-data', localData);
 }
 
 // ? Function to load from local storage. This function will be called on page load.
 function loadFromLocalStorage() {
   // TODO: Load and parse the data from local storage and paint the images and text on the mood board
-
+  let localData = localStorage.getItem(`local-data`);
+  let storedData = JSON.parse(localData);
   if (storedData) {
     tempStorageObject = storedData;
 
