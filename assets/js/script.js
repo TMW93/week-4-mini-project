@@ -49,9 +49,13 @@ addImageBtn.addEventListener('click', function () {
   const imageUrl = imageUrlInput.value;
   if (imageUrl) {
     // TODO: Create an image element, add a class of draggable, set the src attribute to the image URL provided by the user, and append it to the body element
+    let imageEl = document.createElement(`img`);
+    imageEl.setAttribute(`class`, `draggable`);
+    imageEl.setAttribute(`src`, imageUrl);
+    document.body.appendChild(imageEl);
 
     // TODO: Set the `currentElement` to the image element you create.
-
+    currentElement = imageEl;
     // ? We attach the mouse move event listener to the document and the mood board div so that the element can be dragged anywhere on the screen and dropped only on the mood board div.
     attachMouseListeners();
   }
